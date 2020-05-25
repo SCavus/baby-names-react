@@ -1,11 +1,11 @@
 body {
-  background-color: dimgray;
+  background-color: #101820FF;
 }
 .App {
   text-align: center;
   text-align: center;
   border: 4px solid;
-  border-color: black white black white ;
+  border-color: #F2AA4CFF white #F2AA4CFF white ;
   position: absolute;
   top: 5%;
   left: 20%;
@@ -26,7 +26,7 @@ body {
 }
 
 .App-header {
-  background-color: #90caf9;
+  background-color: #F2AA4CFF;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -54,7 +54,7 @@ img {
 }
 
 .all-baby-names{
-  background-color: #90caf9;
+  background-color: #F2AA4CFF;
   margin: 200px;
   display: flex;
   flex-direction: row;
