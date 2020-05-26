@@ -1,13 +1,11 @@
 import React from 'react';
 import './App.css';
-import ListBabyNames from './ListBabyNames'
+import SearchBabyNames from './SearchBabyNames'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <ListBabyNames />
-      </header>
+      <SearchBabyNames />
     </div>
   );
 }
