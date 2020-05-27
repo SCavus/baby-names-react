@@ -1,18 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import data from "./babyNamesData.json";
 import ListBabyNames from "./ListBabyNames";
 
 const SearchBabyNames = () => {
-  const [letter, setLetter] = useState('');
-  const [names, setNames] = useState([]);
+  const [names, setNames] = useState(data);
 
-  const lowerCase = (e) => {
-    setLetter((e.target.value).toLowerCase());
-  };
-
-  useEffect(() => {
-    setNames(data.filter((item) => item.name.toLowerCase().includes(letter)));
-  }, [letter]);
+  const filterNames = (value) => {
+    setNames(data.filter((item) => item.name.toLowerCase().includes(value.toLowerCase())))
+  }
 
   return (
     <div className="container">
@@ -20,7 +15,7 @@ const SearchBabyNames = () => {
         type="text"
         className="search"
         placeholder="Search"
-        onChange={lowerCase}
+        onChange={(e)=> filterNames(e.target.value)}
       ></input>}
       <ListBabyNames babyNames={names} />
     </div>
