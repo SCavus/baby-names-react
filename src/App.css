@@ -40,9 +40,42 @@ margin-bottom: 30px;
 color: black;
 }
 
+/* img {
+  height: 100px;
+  margin-bottom: 20px;
+} */
+
 img {
   height: 100px;
   margin-bottom: 20px;
+  border-radius: 50%;
+  /* -webkit-transition: -webkit-transform 1.9s ease-in-out; */
+          /* transition:         transform 1.9s ease-in-out; */
+}
+img:hover {
+  animation: rotation 0.2s infinite linear;
+
+  /* -webkit-transform: rotate(3600deg); */
+          /* transform: rotate(3600deg); */
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+.favorites {
+  margin:20px 0px;
+}
+
+.favorites span {
+  font-weight: bolder;
+  margin: 5px;
+  font-size: 19px;
 }
 
 .all-baby-names {
