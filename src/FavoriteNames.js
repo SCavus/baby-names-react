@@ -1,25 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import useSound from "use-sound";
 import mozart from "./mozart.mp3";
 
 const FavoriteNames = (props) => {
-  // const [play] = useSound(mozart)
+  const [isClicked, setIsClicked] = useState(false)
   const [play, { stop }] = useSound(mozart, { volume: 0.5 });
 
-  const [isHovering, setIsHovering] = React.useState(false);
+  const toggle = () => {
+    setIsClicked(!isClicked);
+  }
+
+  //const [isHovering, setIsHovering] = React.useState(false);
+
+//  const [play] = useSound(mozart);
 
   return (
     <div>
       <div className="container">
-        <img
-          onMouseEnter={() => {
-            setIsHovering(true);
-            play();
-          }}
-          onMouseLeave={() => {
-            setIsHovering(false);
-            stop();
-          }}
+        <img onClick={()=>{
+          toggle(); 
+         isClicked ? play() : stop()}}
+        //onMouseEnter is not allowed by Chrome
+          // onMouseEnter={() => {
+          //   setIsHovering(true);
+          //   play();
+          // }}
+          // onMouseLeave={() => {
+          //   setIsHovering(false);
+          //   stop();
+          // }}
           src="yin-yang.png"
           alt="yin-yang"
         />
